@@ -1,0 +1,90 @@
+---
+layout: layouts/base.njk
+title: About Provider Compliance Bureau
+permalink: /about/
+description: "Provider Compliance Bureau is a private healthcare compliance services organization providing ongoing HIPAA compliance, privacy, security, and risk-management support."
+---
+{%- from "partials/icons.njk" import icon -%}
+{%- from "partials/components.njk" import pageHero, ctaBand -%}
+
+{{ pageHero("About Us", "Healthcare Compliance Requires More Than Policies on Paper",
+  "Provider Compliance Bureau is a private healthcare compliance services organization. We help providers manage privacy, security, risk, documentation, and day-to-day compliance responsibilities.", "", "", [], images.about) }}
+
+<section class="section">
+  <div class="wrap">
+    <div class="margin-layout">
+      <div class="margin-label"><span class="eyebrow">Who we are</span><h2>An Outside Compliance Partner</h2></div>
+      <div class="stack measure">
+        <p class="lede">Most healthcare organizations do not have, and do not need, a full internal HIPAA compliance department. They do need the structure, expertise, and follow-through that one provides.</p>
+        <p>We supply that infrastructure as an outside partner. For organizations without dedicated compliance staff, we serve as the compliance function. For organizations that already have a privacy or compliance officer, we add capacity and specialized support.</p>
+      </div>
+    </div>
+
+    <div class="margin-layout">
+      <div class="margin-label"><span class="eyebrow">Why we exist</span><h2>Compliance Is Usually Someone's Second Job</h2></div>
+      <div class="stack measure">
+        <p>In many healthcare organizations, compliance falls to administrators, office managers, IT providers, and clinical leaders on top of their main responsibilities. Good intentions are rarely the problem. Time and structure are.</p>
+        <p>We provide the structure, oversight, and follow-through that keep a compliance program current: scheduled reviews, maintained documents, tracked issues, and someone accountable for moving them forward.</p>
+      </div>
+    </div>
+
+    <div class="margin-layout">
+      <div class="margin-label"><span class="eyebrow">Who we work with</span><h2>Across Your Organization</h2></div>
+      <ul class="check-list cols-2">
+        <li>Executives and owners</li>
+        <li>Practice administrators</li>
+        <li>Compliance and privacy personnel</li>
+        <li>IT and cybersecurity providers</li>
+        <li>Clinical leadership</li>
+        <li>Outside counsel, when appropriate</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-mist rule-top">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Our philosophy</span>
+      <h2>Four Principles Behind Our Work</h2>
+    </div>
+    <div class="grid grid-2">
+      <div class="card"><h3>Prevention</h3><p>Identify and address risk early, before an incident or a request for documentation forces the issue.</p></div>
+      <div class="card"><h3>Documentation</h3><p>Preserve evidence of compliance activity, so the work your organization does can be shown.</p></div>
+      <div class="card"><h3>Continuity</h3><p>Compliance is ongoing, not annual. Programs need regular attention as people, systems, and vendors change.</p></div>
+      <div class="card"><h3>Practicality</h3><p>Recommendations must work in real clinical and business operations, or they will not be followed.</p></div>
+    </div>
+  </div>
+</section>
+
+{%- if team.members.length %}
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">Leadership</span><h2>Our Team</h2></div>
+    <div class="grid grid-3">
+      {%- for m in team.members %}
+      <div class="person">
+        {%- if m.photo %}<img src="{{ m.photo }}" alt="{{ m.name }}" loading="lazy">{% endif %}
+        <h3>{{ m.name }}</h3>
+        <span class="role">{{ m.role }}</span>
+        {%- if m.credentials %}<span class="cite">{{ m.credentials }}</span>{% endif %}
+        {%- if m.bio %}<p class="muted">{{ m.bio }}</p>{% endif %}
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+<section class="section{% if team.members.length %} bg-mist rule-top{% endif %}">
+  <div class="wrap">
+    <div class="panel panel-light">
+      <span class="eyebrow">Our identity</span>
+      <h2 class="h-lg">A Private Organization</h2>
+      <p>{{ site.identityFull }} We do not conduct government audits or investigations, and we have no advance knowledge of regulatory activity.</p>
+      <p>{{ site.outcomeStatement }}</p>
+    </div>
+  </div>
+</section>
+
+{{ ctaBand("Speak with our team.", "Tell us about your organization and the compliance questions on your mind.", "Speak With Our Team", "/compliance-review/?contact=specialist", "Request a Compliance Review", "/compliance-review/") }}

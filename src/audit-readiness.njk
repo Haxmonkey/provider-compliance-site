@@ -1,0 +1,99 @@
+---
+layout: layouts/base.njk
+title: HIPAA Audit Readiness
+permalink: /audit-readiness/
+description: "If your organization was reviewed tomorrow, what could you produce? An audit readiness review organizes your HIPAA evidence and identifies what is missing or out of date."
+---
+{%- from "partials/icons.njk" import icon -%}
+{%- from "partials/components.njk" import pageHero, ctaBand -%}
+
+{{ pageHero("Audit Readiness", "If Your Organization Was Reviewed Tomorrow, What Could You Produce?",
+  "Readiness means keeping evidence of compliance current all year. It does not mean assembling documents after a request arrives.",
+  "Request an Audit Readiness Review", "/compliance-review/?concern=audit-readiness", [{label: "Services", href: "/services/"}, {label: "Audit Readiness"}], images.audit) }}
+
+<section class="section">
+  <div class="wrap">
+    <div class="margin-layout">
+      <div class="margin-label">
+        <span class="eyebrow">Core documentation</span>
+        <h2>Ten Areas to Keep Current</h2>
+        <span class="cite">§ 164.316(b): retain six years</span>
+      </div>
+      <ul class="check-list cols-2">
+        <li>HIPAA privacy and security policies</li>
+        <li>Security risk analysis documentation</li>
+        <li>Risk management and remediation records</li>
+        <li>Workforce training documentation</li>
+        <li>Business Associate Agreements</li>
+        <li>Incident and investigation records</li>
+        <li>Corrective action records</li>
+        <li>Access-control procedures and reviews</li>
+        <li>Vendor documentation</li>
+        <li>Contingency and recovery procedures</li>
+      </ul>
+    </div>
+
+    <div class="margin-layout">
+      <div class="margin-label">
+        <span class="eyebrow">Definition</span>
+        <h2>What "Audit Ready" Means</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="card"><h3>Current documents</h3><p>Policies and assessments reflect how the organization operates today.</p></div>
+        <div class="card"><h3>Organized records</h3><p>Evidence is in one place and can be produced quickly.</p></div>
+        <div class="card"><h3>Responsible owners</h3><p>Each area has a named person accountable for it.</p></div>
+        <div class="card"><h3>Policies match practice</h3><p>What the policy says is what staff actually do.</p></div>
+        <div class="card"><h3>Documented risk management</h3><p>Identified risks have a recorded decision and plan.</p></div>
+        <div class="card"><h3>Issues closed out</h3><p>Fixes are recorded, with dates, not just carried out.</p></div>
+      </div>
+    </div>
+
+    <div class="margin-layout">
+      <div class="margin-label">
+        <span class="eyebrow">What goes wrong</span>
+        <h2>Common Readiness Problems</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Problem</th><th scope="col">Why it matters</th></tr></thead>
+          <tbody>
+            <tr><td>Documents exist but are stale</td><td>An outdated risk analysis may not reflect current systems or risks</td></tr>
+            <tr><td>Policies do not match operations</td><td>A policy that is not followed can be worse than none</td></tr>
+            <tr><td>Risk assessments are incomplete</td><td>Systems, locations, or vendors left out of scope</td></tr>
+            <tr><td>Training records cannot be found</td><td>Training that cannot be shown is hard to prove</td></tr>
+            <tr><td>BAAs scattered or missing</td><td>No clear record of which vendors are covered</td></tr>
+            <tr><td>Vendors not centrally tracked</td><td>New vendors start handling PHI without review</td></tr>
+            <tr><td>Fixed issues never documented</td><td>Remediation work leaves no evidence</td></tr>
+            <tr><td>Compliance ownership unclear</td><td>Tasks fall between administrators, IT, and leadership</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-navy on-navy">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The review</span>
+      <h2>Our Audit Readiness Review</h2>
+      <p>A focused engagement that leaves you with a central readiness record and a clear list of what to fix first.</p>
+    </div>
+    <ol class="steps steps-5">
+      <li class="step"><h3>Inventory</h3><p>Collect the compliance documents you currently have.</p></li>
+      <li class="step"><h3>Map</h3><p>Compare expected evidence with what exists.</p></li>
+      <li class="step"><h3>Identify</h3><p>Flag missing and stale materials.</p></li>
+      <li class="step"><h3>Prioritize</h3><p>Rank gaps and assign an owner to each.</p></li>
+      <li class="step"><h3>Record</h3><p>Establish a central readiness record you can maintain.</p></li>
+    </ol>
+    <p class="mt-m muted measure">When a matter calls for legal interpretation or representation, we recommend involving qualified healthcare counsel.</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <p class="note">We do not have advance knowledge of regulatory audits or investigations, and a readiness review does not mean your organization has been selected for one. Readiness is about being prepared for any review, whether from a regulator, a payer, a partner, or your own leadership.</p>
+  </div>
+</section>
+
+{{ ctaBand("Find out where your organization stands.", "An audit readiness review shows you what you could produce today, and what is missing.", "Request an Audit Readiness Review", "/compliance-review/?concern=audit-readiness") }}

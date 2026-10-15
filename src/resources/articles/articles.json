@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/article.njk",
+  "permalink": "/resources/{{ page.fileSlug }}/",
+  "author": "Provider Compliance Bureau"
+}

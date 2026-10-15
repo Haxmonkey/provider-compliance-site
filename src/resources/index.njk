@@ -1,0 +1,50 @@
+---
+layout: layouts/base.njk
+title: Healthcare Compliance Resources
+permalink: /resources/
+description: "Practical guidance for healthcare organizations on HIPAA compliance, cybersecurity, audit readiness, business associates, and incident response."
+---
+{%- from "partials/icons.njk" import icon -%}
+{%- from "partials/components.njk" import pageHero, ctaBand -%}
+
+{{ pageHero("Compliance Center", "Healthcare Compliance Resources",
+  "Practical guidance for healthcare organizations on HIPAA privacy and security, cyber risk, vendors, incident response, and audit preparedness. Articles are dated and reviewed periodically.") }}
+
+<section class="section">
+  <div class="wrap">
+    <a class="panel lead-magnet" href="/resources/hipaa-readiness-checklist/">
+      <div>
+        <span class="eyebrow">Free checklist</span>
+        <h2 class="h-lg">HIPAA Readiness Checklist</h2>
+        <p>Thirty questions to check whether your organization could produce key compliance evidence today.</p>
+      </div>
+      <span class="btn btn-light">Get the Checklist {{ icon("arrow") }}</span>
+    </a>
+
+    <div class="filters mt-l" id="filters">
+      <button class="chip" type="button" aria-pressed="true" data-filter="all">All topics</button>
+      {%- for c in categories %}<button class="chip" type="button" aria-pressed="false" data-filter="{{ c.slug }}">{{ c.name }}</button>{% endfor %}
+      <label class="search">{{ icon("search") }}<span class="visually-hidden">Search articles</span><input type="search" id="article-search" placeholder="Search articles"></label>
+    </div>
+
+    <div class="grid grid-3" id="article-grid">
+      {%- for a in collections.articles %}
+      <a class="card card-link article-card" href="{{ a.url }}" data-category="{{ a.data.category | slugify }}" data-text="{{ (a.data.title + ' ' + a.data.description + ' ' + a.data.category) | lower }}">
+        <span class="tag">{{ a.data.category }}</span>
+        <h3>{{ a.data.title }}</h3>
+        <p>{{ a.data.description }}</p>
+        <span class="meta"><time datetime="{{ a.date | isoDate }}">{{ a.date | readableDate }}</time><span>{{ a.content | readingTime }} min read</span></span>
+      </a>
+      {%- endfor %}
+    </div>
+    <p class="empty mt-m" id="no-results" hidden>No articles match your search. Try a different term or topic.</p>
+  </div>
+</section>
+
+<section class="section-tight bg-mist rule-top">
+  <div class="wrap">
+    <p class="note">{{ site.notLegalAdvice }}</p>
+  </div>
+</section>
+
+{{ ctaBand("Have questions about your own compliance environment?", "Articles cover general topics. A compliance review looks at your organization specifically.") }}

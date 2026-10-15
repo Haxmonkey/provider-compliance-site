@@ -1,0 +1,77 @@
+---
+layout: layouts/base.njk
+title: How It Works
+permalink: /how-it-works/
+description: "A structured, manageable approach to healthcare compliance: initial review, gap identification, a prioritized roadmap, remediation, ongoing management, and audit readiness."
+---
+{%- from "partials/icons.njk" import icon -%}
+{%- from "partials/components.njk" import pageHero, ctaBand -%}
+
+{{ pageHero("How It Works", "A Practical Approach to Healthcare Compliance",
+  "Engagements are structured to fit around patient care. The first step is a professional review of your environment, not a sales presentation.",
+  "Start With a Compliance Review", "/compliance-review/") }}
+
+<section class="section">
+  <div class="wrap">
+    <div class="margin-layout">
+      <div class="margin-label">
+        <span class="eyebrow">The engagement</span>
+        <h2>Six Stages</h2>
+        <p class="muted">The first three stages establish where you stand and what to fix. The last three keep it that way.</p>
+      </div>
+      <ol class="timeline">
+        <li>
+          <div class="tl-body">
+            <h3>Initial Compliance Review</h3>
+            <p>We collect high-level information about your organization: size, locations, systems, workforce, vendors, existing policies, compliance resources, and any known concerns. This is a conversation and a document request, not an on-site disruption.</p>
+          </div>
+        </li>
+        <li>
+          <div class="tl-body">
+            <h3>Risk &amp; Gap Identification</h3>
+            <p>We review your documentation and workflows to identify missing records, stale policies, access issues, vendor gaps, security concerns, and operational vulnerabilities.</p>
+          </div>
+        </li>
+        <li>
+          <div class="tl-body">
+            <h3>Prioritized Compliance Roadmap</h3>
+            <p>Findings are organized by urgency so leadership knows what to address first and what can be planned over time.</p>
+            <div class="priority-row">
+              <span class="status status-crit">Critical</span>
+              <span class="status status-warn">High priority</span>
+              <span class="status status-neutral">Moderate</span>
+              <span class="status status-ok">Long-term improvement</span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="tl-body">
+            <h3>Implementation &amp; Remediation</h3>
+            <p>We help put fixes in place: policies, training, documentation, workflows, vendor management, and incident procedures. Where a fix is technical, we coordinate with your IT or security provider.</p>
+          </div>
+        </li>
+        <li>
+          <div class="tl-body">
+            <h3>Ongoing Management</h3>
+            <p>We maintain documentation, follow up on open items, update policies, track workforce requirements and vendor records, and conduct periodic reviews.</p>
+          </div>
+        </li>
+        <li>
+          <div class="tl-body">
+            <h3>Audit Readiness</h3>
+            <p>Evidence stays organized so your organization is better prepared for regulatory questions, security incidents, and internal reviews.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+
+<section class="section-tight">
+  <div class="wrap">
+    <p class="note">Please do not send patient records or other protected health information through this website. When an engagement requires reviewing documents that contain PHI, we arrange an appropriate secure method and the agreements required before any exchange.</p>
+  </div>
+</section>
+
+{{ ctaBand("Start with a compliance review.", "Tell us about your organization. We will follow up to discuss your environment and next steps.", "Start With a Compliance Review", "/compliance-review/") }}

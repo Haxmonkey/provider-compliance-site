@@ -1,0 +1,123 @@
+---
+layout: layouts/base.njk
+title: Security & PHI Protection
+permalink: /security-phi-protection/
+description: "Where PHI exposure happens in healthcare organizations, and the access controls, communication safeguards, and procedures that reduce it."
+---
+{%- from "partials/icons.njk" import icon -%}
+{%- from "partials/components.njk" import pageHero, ctaBand -%}
+
+{{ pageHero("Security & PHI Protection", "Protecting PHI Requires More Than Antivirus Software",
+  "Healthcare security depends on technology, people, access controls, vendors, policies, and daily workflows. Most exposure starts with an ordinary task done in an unsafe way.",
+  "", "", [{label: "Services", href: "/services/"}, {label: "Security & PHI Protection"}], images.security) }}
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Exposure points</span>
+      <h2>Where PHI Exposure Happens</h2>
+      <p>Patient information moves through far more places than the EHR. Each one needs a safeguard and someone responsible for it.</p>
+    </div>
+    <div class="flow">
+      <div class="flow-cell">{{ icon("record") }}<h3>Email</h3><p>Messages and attachments sent to the wrong recipient or a personal account.</p></div>
+      <div class="flow-cell">{{ icon("network") }}<h3>Shared folders &amp; cloud</h3><p>Links shared too widely and folders that never get closed.</p></div>
+      <div class="flow-cell">{{ icon("lock") }}<h3>EHR &amp; patient portal</h3><p>Access beyond what a role needs, and accounts not removed on departure.</p></div>
+      <div class="flow-cell">{{ icon("surgical") }}<h3>Personal &amp; mobile devices</h3><p>Phones and laptops with PHI and no management or encryption.</p></div>
+      <div class="flow-cell">{{ icon("people") }}<h3>Text &amp; chat tools</h3><p>Consumer messaging apps used for patient coordination.</p></div>
+      <div class="flow-cell">{{ icon("practice") }}<h3>Remote access</h3><p>Home networks and remote sessions without consistent controls.</p></div>
+      <div class="flow-cell">{{ icon("vendor") }}<h3>Third-party vendors</h3><p>Vendors with access to PHI and no current agreement or review.</p></div>
+      <div class="flow-cell">{{ icon("policy") }}<h3>Printed records &amp; disposal</h3><p>Paper left at printers, misfiled charts, and improper disposal.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-mist rule-top">
+  <div class="wrap grid grid-2">
+    <div class="card">
+      <span class="eyebrow">Access controls</span>
+      <h2 class="h-lg">Limit Access to What Each Role Needs</h2>
+      <ul class="check-list">
+        <li>Unique user accounts, with no shared logins</li>
+        <li>Role-based permissions</li>
+        <li>Multi-factor authentication where appropriate</li>
+        <li>Review of privileged and administrator accounts</li>
+        <li>Prompt account termination when staff leave</li>
+        <li>Periodic, documented access reviews</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="eyebrow">Email &amp; communication</span>
+      <h2 class="h-lg">Control How PHI Leaves the Organization</h2>
+      <ul class="check-list">
+        <li>PHI sent to incorrect recipients</li>
+        <li>Use of personal email accounts</li>
+        <li>Unapproved automatic forwarding</li>
+        <li>Insecure file-sharing links</li>
+        <li>Unapproved messaging apps</li>
+        <li>Weak identity verification before disclosure</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="margin-layout">
+      <div class="margin-label">
+        <span class="eyebrow">Cyber threats</span>
+        <h2>Threats to Address</h2>
+      </div>
+      <div class="stack">
+        <p class="lede">Healthcare organizations hold valuable data and depend on their systems to deliver care. That combination makes them a frequent target.</p>
+        <ul class="dash-list cols-2 mt-s">
+          <li>Phishing and social engineering</li>
+          <li>Credential theft</li>
+          <li>Ransomware</li>
+          <li>Compromised email and user accounts</li>
+          <li>Vendor compromise</li>
+          <li>Malicious or accidental insider activity</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="margin-layout">
+      <div class="margin-label">
+        <span class="eyebrow">Human risk</span>
+        <h2>Ordinary Mistakes, Practical Controls</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Common mistake</th><th scope="col">Control that reduces it</th></tr></thead>
+          <tbody>
+            <tr><td>Clicking a phishing link</td><td>Awareness training, email filtering, multi-factor authentication</td></tr>
+            <tr><td>Sending records to the wrong patient</td><td>Verification steps before release, workflow review</td></tr>
+            <tr><td>Texting PHI from a personal phone</td><td>Approved communication tools and a clear policy</td></tr>
+            <tr><td>Viewing records without a work reason</td><td>Role-based access, activity review, sanctions policy</td></tr>
+            <tr><td>Leaving a shared folder open</td><td>Sharing defaults, periodic access review</td></tr>
+            <tr><td>Not reporting a mistake</td><td>Simple incident reporting and a non-punitive culture</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="margin-layout">
+      <div class="margin-label">
+        <span class="eyebrow">Our role</span>
+        <h2>How We Fit</h2>
+      </div>
+      <div class="stack measure">
+        <p>We work with your leadership and your IT or security provider. Our role is to review whether appropriate safeguards and procedures exist, identify gaps, help remediate policies and processes, and maintain the compliance documentation.</p>
+        <ul class="check-list">
+          <li>Review safeguards and procedures against your actual workflows</li>
+          <li>Work with leadership and your IT team on priorities</li>
+          <li>Identify gaps and document findings</li>
+          <li>Assist with policy and process remediation</li>
+          <li>Maintain compliance documentation over time</li>
+        </ul>
+        <p class="note">Our focus is compliance: safeguards, procedures, and documentation. Technical security work such as penetration testing, continuous security monitoring, forensic investigation, and managed IT is typically handled by your IT or security partners, and we coordinate with them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ ctaBand("Discuss your PHI security environment.", "Tell us how your organization communicates, stores, and shares patient information. We will help you see where exposure is most likely.", "Discuss Your PHI Security Environment", "/compliance-review/?concern=cyber-phi") }}

@@ -1,0 +1,52 @@
+---
+layout: layouts/base.njk
+title: Healthcare Compliance Services
+permalink: /services/
+description: "HIPAA risk assessments, managed compliance, PHI protection, policies, vendor and BAA management, workforce training, incident response, and audit readiness for healthcare organizations."
+---
+{%- from "partials/icons.njk" import icon -%}
+{%- from "partials/components.njk" import pageHero, ctaBand -%}
+
+{{ pageHero("Services", "Comprehensive Healthcare Compliance Services",
+  "Provider Compliance Bureau works as an ongoing compliance partner. Every engagement is scoped to your organization's size, systems, risk profile, and operational complexity, so we start by understanding your environment.",
+  "Request a Compliance Review", "/compliance-review/", [], images.services) }}
+
+<section class="section">
+  <div class="wrap">
+    <nav class="filters" aria-label="Jump to a service">
+      {%- for s in services %}<a class="chip" href="#{{ s.id }}">{{ s.name }}</a>{% endfor %}
+    </nav>
+    <div class="mt-m">
+      {%- for s in services %}
+      <article class="service" id="{{ s.id }}">
+        <div class="service-head">
+          <span class="service-num">{{ icon(s.icon) }}</span>
+          <h2>{{ s.name }}</h2>
+          <p>{{ s.summary }}</p>
+          <a class="text-link" href="/compliance-review/?concern={{ s.concern }}">Discuss this service {{ icon("arrow") }}</a>
+        </div>
+        <div class="deliverables">
+          <h3>What this includes</h3>
+          <ul class="check-list">
+            {%- for d in s.deliverables %}<li>{{ d }}</li>{% endfor %}
+          </ul>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-tight bg-mist rule-top">
+  <div class="wrap">
+    <div class="margin-layout">
+      <div class="margin-label"><span class="eyebrow">How we describe outcomes</span></div>
+      <div class="stack measure">
+        <p>Our work is designed to reduce compliance risk, strengthen safeguards, and support ongoing compliance. We are careful not to promise more than any provider honestly can: no service guarantees that a breach will never occur or that an audit will have a particular outcome.</p>
+        <p class="muted">Where a question needs legal interpretation or representation, we recommend involving qualified healthcare counsel. Where it needs technical security work such as penetration testing or system configuration, we coordinate with your IT or security provider.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ ctaBand("Not sure what your organization needs?", "Start with a compliance review, so scope is based on your actual environment rather than a package.") }}

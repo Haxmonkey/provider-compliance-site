@@ -1,0 +1,131 @@
+---
+layout: layouts/base.njk
+title: Home
+seoTitle: "Provider Compliance Bureau | Healthcare Privacy, Security & Regulatory Compliance"
+description: "Managed HIPAA compliance, PHI protection, and audit readiness for physician practices, surgical groups, specialty clinics, and hospitals. Request a compliance review."
+---
+{%- from "partials/icons.njk" import icon -%}
+{%- from "partials/components.njk" import ctaBand, photo -%}
+
+<section class="hero on-navy">
+  <div class="wrap hero-grid has-media">
+    <div class="hero-copy">
+      <span class="eyebrow">HIPAA compliance for healthcare providers</span>
+      <h1>Would Your Organization Be Ready for a HIPAA Review Tomorrow?</h1>
+      <p class="hero-lead">Healthcare organizations face cybersecurity threats, PHI exposure, regulatory scrutiny, and increasingly complex HIPAA compliance requirements.</p>
+      <p class="hero-sub">Provider Compliance Bureau helps healthcare organizations identify vulnerabilities, maintain compliance documentation, strengthen PHI safeguards, and stay prepared before an incident or regulatory review occurs.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/compliance-review/">Request a Compliance Review {{ icon("arrow") }}</a>
+        <a class="btn btn-secondary" href="/compliance-review/?contact=specialist">Speak With a Compliance Specialist</a>
+      </div>
+      <p class="hero-identity">{{ site.identityShort }}</p>
+    </div>
+    {{ photo(images.homeHero, "hero-media", "eager") }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="margin-layout">
+      <div class="margin-label">
+        <span class="eyebrow">Why it matters</span>
+        <span class="cite">45 CFR Parts 160 &amp; 164</span>
+      </div>
+      <div class="stack">
+        <h2 class="h-xl">Compliance Shouldn't Start After an Incident</h2>
+        <p class="lede">A policy manual, annual training, or an IT vendor does not by itself make a compliance program. HIPAA expects administrative, physical, and technical safeguards that are actually in place and maintained, and documentation that shows it.</p>
+        <p class="muted measure">When questions arise, whether from a regulator, a patient complaint, a payer, or a security event, organizations need to show what they have been doing all along:</p>
+        <ul class="check-list cols-2 mt-s">
+          <li>Current risk assessments</li>
+          <li>Policies aligned with real workflows</li>
+          <li>Access controls and workforce procedures</li>
+          <li>Business associate and vendor oversight</li>
+          <li>Training records for every workforce member</li>
+          <li>Incident response and remediation records</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-mist rule-top">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">When compliance falls short</span>
+      <h2>What Is at Stake</h2>
+      <p>Not every gap leads to a penalty. But when a security incident or complaint exposes weak safeguards or missing documentation, the consequences can extend well beyond the original issue.</p>
+    </div>
+    <div class="risk-grid">
+      <div class="risk"><h3>Regulatory investigation</h3><p>Complaints and reported breaches can lead to inquiries from the HHS Office for Civil Rights or state authorities.</p></div>
+      <div class="risk"><h3>Breach notification obligations</h3><p>Affected patients, HHS, and in larger breaches the media may need to be notified.</p></div>
+      <div class="risk"><h3>Corrective action requirements</h3><p>Organizations may be required to adopt and report on a formal corrective action plan.</p></div>
+      <div class="risk"><h3>Financial exposure</h3><p>Civil monetary penalties, settlements, legal costs, and incident response expenses.</p></div>
+      <div class="risk"><h3>Operational disruption</h3><p>Staff time diverted to investigation, remediation, and system recovery.</p></div>
+      <div class="risk"><h3>Reputational damage</h3><p>Large breaches affecting 500 or more individuals are posted publicly by HHS.</p></div>
+      <div class="risk"><h3>Loss of patient trust</h3><p>Patients expect their information to be handled carefully. Trust is hard to rebuild.</p></div>
+      <a class="risk risk-cta" href="/compliance-review/"><h3>Know where you stand</h3><p>A compliance review identifies gaps before an incident does.</p><span class="text-link">Request a Compliance Review {{ icon("arrow") }}</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What we do</span>
+      <h2>An Outside Compliance Function for Your Organization</h2>
+      <p>We provide the oversight, documentation, and follow-through of an internal compliance department, scaled to your organization.</p>
+    </div>
+    <div class="grid grid-3">
+      {%- for s in services %}{% if s.featured %}
+      <a class="card card-link" href="/services/#{{ s.id }}">
+        <span class="icon-badge">{{ icon(s.icon) }}</span>
+        <h3>{{ s.name }}</h3>
+        <p>{{ s.short }}</p>
+        <span class="text-link">Learn more {{ icon("arrow") }}</span>
+      </a>
+      {%- endif %}{% endfor %}
+    </div>
+    <p class="mt-m"><a class="text-link" href="/services/">View all services {{ icon("arrow") }}</a></p>
+  </div>
+</section>
+
+<section class="section bg-navy on-navy">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Our approach</span>
+      <h2>Four Steps to a Maintained Compliance Program</h2>
+      <p>A structured process that fits around clinical operations, not a disruptive consulting project.</p>
+    </div>
+    <ol class="steps steps-4">
+      <li class="step"><h3>Review</h3><p>We learn your systems, people, vendors, policies, and workflows.</p></li>
+      <li class="step"><h3>Identify</h3><p>We document gaps and risk areas and rank them by priority.</p></li>
+      <li class="step"><h3>Correct</h3><p>We help remediate policies, controls, and documentation.</p></li>
+      <li class="step"><h3>Maintain</h3><p>We provide ongoing oversight so you stay audit-ready.</p></li>
+    </ol>
+    <p class="mt-m"><a class="text-link" href="/how-it-works/">See how an engagement works {{ icon("arrow") }}</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Who we serve</span>
+      <h2>Built for HIPAA-Covered Healthcare Organizations</h2>
+      <p>From single-physician offices to hospitals, and the vendors that support them.</p>
+    </div>
+    <div class="grid grid-3">
+      {%- for seg in segments %}
+      <a class="card card-link card-media" href="/who-we-serve/{{ seg.slug }}/">
+        {{ photo(images.segments[seg.slug], "card-photo") }}
+        <div class="card-body">
+          <h3>{{ seg.name }}</h3>
+          <p>{{ seg.short }}</p>
+          <span class="text-link">Learn more {{ icon("arrow") }}</span>
+        </div>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{{ ctaBand("Know where your organization stands before someone else asks.", "Start with a compliance review. We will look at your current environment and tell you where the gaps are.") }}

@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+title: Your HIPAA Readiness Checklist
+permalink: /resources/hipaa-readiness-checklist/thank-you/
+description: "Your HIPAA Readiness Checklist."
+noindex: true
+eleventyExcludeFromCollections: true
+---
+{%- from "partials/icons.njk" import icon -%}
+{%- from "partials/components.njk" import ctaBand -%}
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Your checklist</span>
+    <h1>HIPAA Readiness Checklist</h1>
+    <p class="lead">For each item, ask whether you could produce evidence today, not whether it is generally done. An item you cannot document is worth flagging.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    {%- for g in checklist %}
+    <div class="margin-layout">
+      <div class="margin-label"><span class="eyebrow">{{ loop.index }} of {{ checklist.length }}</span><h2>{{ g.area }}</h2></div>
+      <ol class="readiness-list">
+        {%- for it in g.items %}<li><span class="box" aria-hidden="true"></span><div><strong>{{ it[0] }}</strong>{% if it[1] %}<span>{{ it[1] }}</span>{% endif %}</div></li>{% endfor %}
+      </ol>
+    </div>
+    {%- endfor %}
+    <p class="disclaimer">This checklist is a general self-assessment aid. It is not a complete list of HIPAA requirements and is not legal advice.</p>
+  </div>
+</section>
+{{ ctaBand("Several items you could not check off?", "A compliance review helps you prioritize which gaps to close first.") }}

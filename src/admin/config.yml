@@ -1,0 +1,195 @@
+# Content editor for Provider Compliance Bureau (Decap CMS).
+# Staff sign in at https://<your-domain>/admin/
+# Authentication: Netlify Identity + Git Gateway (see README "Content editor").
+backend:
+  name: git-gateway
+  branch: main
+
+# Lets the editor run on your own computer without signing in (only works on localhost).
+local_backend: true
+
+site_url: /
+display_url: /
+logo_url: /assets/img/mark.svg
+
+media_folder: src/uploads
+public_folder: /uploads
+
+# Saves drafts for review before publishing.
+publish_mode: editorial_workflow
+
+collections:
+  - name: articles
+    label: Resources articles
+    label_singular: Article
+    description: Articles shown in the Resources / Compliance Center. Please do not include patient information.
+    folder: src/resources/articles
+    create: true
+    slug: "{{slug}}"
+    preview_path: "resources/{{slug}}/"
+    sortable_fields: [date, title, category]
+    view_filters:
+      - { label: HIPAA Compliance, field: category, pattern: HIPAA Compliance }
+      - { label: Cybersecurity, field: category, pattern: Cybersecurity }
+      - { label: Audit Readiness, field: category, pattern: Audit Readiness }
+      - { label: Business Associates, field: category, pattern: Business Associates }
+      - { label: Incident Response, field: category, pattern: Incident Response }
+    fields:
+      - { label: Title, name: title, widget: string, hint: "Write the title as a question or a plain statement." }
+      - { label: Summary, name: description, widget: text, hint: "One or two sentences. Shown on the Resources page and in search results." }
+      - label: Category
+        name: category
+        widget: select
+        options: [HIPAA Compliance, Cybersecurity, Audit Readiness, Business Associates, Incident Response]
+      - { label: Publish date, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "MMMM D, YYYY", time_format: false }
+      - { label: Last reviewed or updated, name: updated, widget: datetime, format: "YYYY-MM-DD", date_format: "MMMM D, YYYY", time_format: false, required: false, hint: "Set this when you review or revise the article." }
+      - { label: Key takeaways, name: takeaways, widget: list, field: { label: Takeaway, name: takeaway, widget: string }, required: false, hint: "Three or four short points." }
+      - { label: Author, name: author, widget: string, default: Provider Compliance Bureau, required: false }
+      - { label: Hide from site, name: draft, widget: boolean, default: false, required: false }
+      - { label: Article, name: body, widget: markdown, hint: "Link to authoritative sources (HHS, eCFR) where helpful." }
+
+  - name: settings
+    label: Site settings
+    editor: { preview: false }
+    files:
+      - label: Contact details
+        name: contact
+        file: src/_data/contact.json
+        fields:
+          - { label: Website address, name: url, widget: string, required: false, hint: "Full address, e.g. https://www.example.com. Used for search engines." }
+          - { label: Email, name: email, widget: string, required: false, hint: "Shown in the footer. Leave blank to hide." }
+          - { label: Phone, name: phone, widget: string, required: false, hint: "Shown in the footer. Leave blank to hide." }
+          - { label: Business hours, name: hours, widget: string, required: false }
+          - { label: Response time, name: responseTime, widget: string, required: false, hint: "Shown on the confirmation page, e.g. 'one business day'. Leave blank to omit." }
+      - label: Leadership team
+        name: team
+        file: src/_data/team.json
+        fields:
+          - label: Team members
+            name: members
+            widget: list
+            required: false
+            hint: "The Leadership section on the About page appears once at least one person is added. Use only accurate, verifiable credentials."
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Role, name: role, widget: string }
+              - { label: Credentials, name: credentials, widget: string, required: false, hint: "e.g. CHPC, CHC, CISSP" }
+              - { label: Photo, name: photo, widget: image, required: false }
+              - { label: Short bio, name: bio, widget: text, required: false }
+      - label: Site images
+        name: images
+        file: src/_data/images.json
+        fields:
+          - label: "Home page: hero"
+            name: homeHero
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Photo, name: src, widget: image, choose_url: false }
+              - { label: Description for screen readers, name: alt, widget: string, hint: "Describe what the photo shows." }
+              - { label: Suggested subject, name: brief, widget: string, required: false }
+              - { label: Suggested size, name: size, widget: string, required: false }
+          - label: "Services page"
+            name: services
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Photo, name: src, widget: image, choose_url: false }
+              - { label: Description for screen readers, name: alt, widget: string, hint: "Describe what the photo shows." }
+              - { label: Suggested subject, name: brief, widget: string, required: false }
+              - { label: Suggested size, name: size, widget: string, required: false }
+          - label: "HIPAA Compliance page"
+            name: hipaa
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Photo, name: src, widget: image, choose_url: false }
+              - { label: Description for screen readers, name: alt, widget: string, hint: "Describe what the photo shows." }
+              - { label: Suggested subject, name: brief, widget: string, required: false }
+              - { label: Suggested size, name: size, widget: string, required: false }
+          - label: "Security & PHI Protection page"
+            name: security
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Photo, name: src, widget: image, choose_url: false }
+              - { label: Description for screen readers, name: alt, widget: string, hint: "Describe what the photo shows." }
+              - { label: Suggested subject, name: brief, widget: string, required: false }
+              - { label: Suggested size, name: size, widget: string, required: false }
+          - label: "Audit Readiness page"
+            name: audit
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Photo, name: src, widget: image, choose_url: false }
+              - { label: Description for screen readers, name: alt, widget: string, hint: "Describe what the photo shows." }
+              - { label: Suggested subject, name: brief, widget: string, required: false }
+              - { label: Suggested size, name: size, widget: string, required: false }
+          - label: "About page"
+            name: about
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Photo, name: src, widget: image, choose_url: false }
+              - { label: Description for screen readers, name: alt, widget: string, hint: "Describe what the photo shows." }
+              - { label: Suggested subject, name: brief, widget: string, required: false }
+              - { label: Suggested size, name: size, widget: string, required: false }
+          - label: Who We Serve images
+            name: segments
+            widget: object
+            collapsed: true
+            fields:
+              - label: "Private Physician Practices"
+                name: physician-practices
+                widget: object
+                collapsed: true
+                fields:
+                  - { label: Photo, name: src, widget: image, choose_url: false }
+                  - { label: Description for screen readers, name: alt, widget: string, hint: "Describe what the photo shows." }
+                  - { label: Suggested subject, name: brief, widget: string, required: false }
+                  - { label: Suggested size, name: size, widget: string, required: false }
+              - label: "Surgical Practices"
+                name: surgical-practices
+                widget: object
+                collapsed: true
+                fields:
+                  - { label: Photo, name: src, widget: image, choose_url: false }
+                  - { label: Description for screen readers, name: alt, widget: string, hint: "Describe what the photo shows." }
+                  - { label: Suggested subject, name: brief, widget: string, required: false }
+                  - { label: Suggested size, name: size, widget: string, required: false }
+              - label: "Specialty Clinics"
+                name: specialty-clinics
+                widget: object
+                collapsed: true
+                fields:
+                  - { label: Photo, name: src, widget: image, choose_url: false }
+                  - { label: Description for screen readers, name: alt, widget: string, hint: "Describe what the photo shows." }
+                  - { label: Suggested subject, name: brief, widget: string, required: false }
+                  - { label: Suggested size, name: size, widget: string, required: false }
+              - label: "Multi-Location Medical Groups"
+                name: multi-location-groups
+                widget: object
+                collapsed: true
+                fields:
+                  - { label: Photo, name: src, widget: image, choose_url: false }
+                  - { label: Description for screen readers, name: alt, widget: string, hint: "Describe what the photo shows." }
+                  - { label: Suggested subject, name: brief, widget: string, required: false }
+                  - { label: Suggested size, name: size, widget: string, required: false }
+              - label: "Hospitals & Larger Organizations"
+                name: hospitals
+                widget: object
+                collapsed: true
+                fields:
+                  - { label: Photo, name: src, widget: image, choose_url: false }
+                  - { label: Description for screen readers, name: alt, widget: string, hint: "Describe what the photo shows." }
+                  - { label: Suggested subject, name: brief, widget: string, required: false }
+                  - { label: Suggested size, name: size, widget: string, required: false }
+              - label: "Business Associates"
+                name: business-associates
+                widget: object
+                collapsed: true
+                fields:
+                  - { label: Photo, name: src, widget: image, choose_url: false }
+                  - { label: Description for screen readers, name: alt, widget: string, hint: "Describe what the photo shows." }
+                  - { label: Suggested subject, name: brief, widget: string, required: false }
+                  - { label: Suggested size, name: size, widget: string, required: false }

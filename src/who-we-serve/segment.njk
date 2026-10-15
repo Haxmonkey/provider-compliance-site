@@ -1,0 +1,52 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: segments
+  size: 1
+  alias: seg
+permalink: "/who-we-serve/{{ seg.slug }}/"
+eleventyComputed:
+  title: "HIPAA Compliance for {{ seg.name }}"
+  description: "{{ seg.short }} Provider Compliance Bureau provides HIPAA compliance, PHI protection, and audit readiness support for {{ seg.name | lower }}."
+---
+{%- from "partials/icons.njk" import icon -%}
+{%- from "partials/components.njk" import pageHero, ctaBand -%}
+
+{{ pageHero("Who We Serve", "HIPAA Compliance for " + seg.name, seg.lead, "Discuss Your Organization's Compliance Needs", "/compliance-review/?type=" + seg.slug, [{label: "Who We Serve", href: "/who-we-serve/"}, {label: seg.name}], images.segments[seg.slug]) }}
+
+<section class="section">
+  <div class="wrap">
+    <div class="margin-layout">
+      <div class="margin-label">
+        <span class="icon-badge-plain">{{ icon(seg.icon) }}</span>
+        <span class="eyebrow">The situation</span>
+      </div>
+      <div class="stack measure">
+        {%- for p in seg.body %}<p{% if loop.first %} class="lede"{% endif %}>{{ p }}</p>{% endfor %}
+      </div>
+    </div>
+    <div class="margin-layout">
+      <div class="margin-label"><span class="eyebrow">Where risk builds up</span><h2>Common Challenges</h2></div>
+      <ul class="dash-list cols-2">
+        {%- for c in seg.challenges %}<li>{{ c }}</li>{% endfor %}
+      </ul>
+    </div>
+    <div class="margin-layout">
+      <div class="margin-label"><span class="eyebrow">Our support</span><h2>How We Help</h2></div>
+      <ul class="check-list">
+        {%- for h in seg.help %}<li>{{ h }}</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight bg-mist rule-top">
+  <div class="wrap">
+    <span class="eyebrow">Other organizations we serve</span>
+    <div class="filters mt-s">
+      {%- for other in segments %}{% if other.slug != seg.slug %}<a class="chip" href="/who-we-serve/{{ other.slug }}/">{{ other.name }}</a>{% endif %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+{{ ctaBand("Discuss your organization's compliance needs.", "Start with a compliance review scoped to your organization.", "Request a Compliance Review", "/compliance-review/?type=" + seg.slug) }}

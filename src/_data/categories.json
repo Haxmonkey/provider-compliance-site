@@ -1,0 +1,7 @@
+[
+  { "name": "HIPAA Compliance", "slug": "hipaa-compliance", "description": "What a compliance program includes and how to keep it current." },
+  { "name": "Cybersecurity", "slug": "cybersecurity", "description": "Threats facing healthcare organizations and protecting electronic PHI." },
+  { "name": "Audit Readiness", "slug": "audit-readiness", "description": "Documentation, evidence, and preparing for review." },
+  { "name": "Business Associates", "slug": "business-associates", "description": "BAAs, vendor risk, and third-party relationships." },
+  { "name": "Incident Response", "slug": "incident-response", "description": "Responding to and documenting potential incidents." }
+]

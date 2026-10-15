@@ -1,0 +1,36 @@
+{%- from "partials/icons.njk" import icon -%}
+{%- set u = page.url -%}
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="/" aria-label="{{ site.name }} home">
+      <img src="/assets/img/mark.svg" alt="" width="34" height="34">
+      <span class="brand-text">
+        <span class="brand-name">Provider Compliance Bureau</span>
+        <span class="brand-sub">Healthcare Compliance Services</span>
+      </span>
+    </a>
+    <a class="btn btn-primary header-cta" href="/compliance-review/">Request a Compliance Review</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-open">{{ icon("menu") }}</span><span class="nav-toggle-close">{{ icon("close") }}</span>
+      <span class="visually-hidden">Menu</span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul class="nav-list">
+        <li class="has-sub">
+          <button class="sub-toggle{% if u.startsWith('/services') or u.startsWith('/hipaa') or u.startsWith('/security') or u.startsWith('/audit') %} is-current{% endif %}" type="button" aria-expanded="false" aria-controls="sub-services">Services {{ icon("chevron", "icon chev") }}</button>
+          <ul class="sub" id="sub-services">
+            <li><a href="/services/"{% if u == '/services/' %} aria-current="page"{% endif %}><strong>All Services</strong><span>The full range of compliance support</span></a></li>
+            <li><a href="/hipaa-compliance/"{% if u == '/hipaa-compliance/' %} aria-current="page"{% endif %}><strong>HIPAA Compliance</strong><span>Safeguards, documentation, common gaps</span></a></li>
+            <li><a href="/security-phi-protection/"{% if u == '/security-phi-protection/' %} aria-current="page"{% endif %}><strong>Security &amp; PHI Protection</strong><span>Where exposure happens and how to reduce it</span></a></li>
+            <li><a href="/audit-readiness/"{% if u == '/audit-readiness/' %} aria-current="page"{% endif %}><strong>Audit Readiness</strong><span>Evidence you can produce on request</span></a></li>
+          </ul>
+        </li>
+        <li><a href="/who-we-serve/"{% if u.startsWith('/who-we-serve') %} aria-current="page"{% endif %}>Who We Serve</a></li>
+        <li><a href="/how-it-works/"{% if u == '/how-it-works/' %} aria-current="page"{% endif %}>How It Works</a></li>
+        <li><a href="/about/"{% if u == '/about/' %} aria-current="page"{% endif %}>About</a></li>
+        <li><a href="/resources/"{% if u.startsWith('/resources') %} aria-current="page"{% endif %}>Resources</a></li>
+      </ul>
+      <a class="btn btn-primary nav-cta" href="/compliance-review/">Request a Compliance Review</a>
+    </nav>
+  </div>
+</header>

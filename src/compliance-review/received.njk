@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+title: Request Received
+permalink: /compliance-review/received/
+bodyClass: compliance-page
+description: "Your compliance review request has been received."
+noindex: true
+---
+{%- from "partials/icons.njk" import icon -%}
+<section class="section">
+  <div class="wrap">
+    <div class="confirm">
+      <span class="confirm-mark">{{ icon("check") }}</span>
+      <span class="eyebrow">Request received</span>
+      <h1>Thank you. Your compliance review request has been received.</h1>
+      <p class="lede">A member of our team will review the information you provided and contact you {% if contact.responseTime %}within {{ contact.responseTime }} {% endif %}using your preferred contact method to discuss your organization's compliance environment and appropriate next steps.</p>
+      <div class="panel panel-light">
+        <h2 class="h-sm">What to expect</h2>
+        <ul class="check-list">
+          <li>An initial conversation about your organization, systems, and concerns</li>
+          <li>Questions about locations, workforce, vendors, and existing documentation</li>
+          <li>A recommendation for how to proceed, scoped to your organization</li>
+        </ul>
+        <p>Please do not send patient information or other protected health information by email before an engagement and the appropriate agreements are in place.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-secondary" href="/resources/">Browse Compliance Resources</a>
+        <a class="btn btn-secondary" href="/">Return to Home</a>
+      </div>
+    </div>
+  </div>
+</section>

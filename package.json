@@ -1,0 +1,15 @@
+{
+  "name": "provider-compliance-bureau",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "preview": "eleventy && node scripts/make-preview.mjs",
+    "editor": "npx decap-server"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "3.0.0"
+  },
+  "type": "module",
+  "private": true
+}

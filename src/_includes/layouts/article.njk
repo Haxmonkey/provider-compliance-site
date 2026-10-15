@@ -1,0 +1,53 @@
+---
+layout: layouts/base.njk
+---
+{%- from "partials/icons.njk" import icon -%}
+<article>
+  <header class="page-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/resources/">Resources</a><span aria-hidden="true">/</span><span>{{ category }}</span></nav>
+      <span class="eyebrow">{{ category }}</span>
+      <h1 class="article-title">{{ title }}</h1>
+      <p class="lead">{{ description }}</p>
+      <div class="meta">
+        <span>Published <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time></span>
+        {%- if updated %}<span>Updated <time datetime="{{ updated | isoDate }}">{{ updated | readableDate }}</time></span>{% endif %}
+        <span>{{ content | readingTime }} min read</span>
+        {%- if author %}<span>{{ author }}</span>{% endif %}
+      </div>
+    </div>
+  </header>
+  <div class="section">
+    <div class="wrap article-layout">
+      <div>
+        {%- if takeaways and takeaways.length %}
+        <section class="takeaways" aria-label="Key takeaways">
+          <h2>Key takeaways</h2>
+          <ul class="check-list">{% for t in takeaways %}<li>{{ t }}</li>{% endfor %}</ul>
+        </section>
+        {%- endif %}
+        <div class="prose">
+          {{ content | safe }}
+        </div>
+        <p class="disclaimer">{{ site.notLegalAdvice }} Regulatory requirements change; check the date above and the cited sources for current information.</p>
+      </div>
+      <aside class="article-aside" aria-label="Related">
+        <div class="panel">
+          <span class="eyebrow">Your organization</span>
+          <h2 class="h-sm">Want to know how this applies to you?</h2>
+          <p>A compliance review looks at your actual environment.</p>
+          <a class="btn btn-light" href="/compliance-review/">Request a Compliance Review</a>
+        </div>
+        {%- set rel = collections.articles | related(page.url, category) %}
+        {%- if rel.length %}
+        <div class="related">
+          <span class="eyebrow">Related articles</span>
+          <ul class="related-list">
+            {%- for r in rel %}<li><a href="{{ r.url }}">{{ r.data.title }}</a><span class="tag">{{ r.data.category }}</span></li>{% endfor %}
+          </ul>
+        </div>
+        {%- endif %}
+      </aside>
+    </div>
+  </div>
+</article>

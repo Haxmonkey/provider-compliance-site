@@ -1,0 +1,43 @@
+{%- from "partials/icons.njk" import icon -%}
+
+{%- macro pageHero(eyebrow, heading, lead, ctaLabel="", ctaHref="/compliance-review/", crumbs=[], img=null) -%}
+<section class="page-hero{% if img %} has-media{% endif %}">
+  <div class="wrap{% if img %} page-hero-split{% endif %}">
+  <div class="page-hero-copy">
+    {%- if crumbs.length %}
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>{% for c in crumbs %}<span aria-hidden="true">/</span>{% if c.href %}<a href="{{ c.href }}">{{ c.label }}</a>{% else %}<span>{{ c.label }}</span>{% endif %}{% endfor %}
+    </nav>
+    {%- endif %}
+    <span class="eyebrow">{{ eyebrow }}</span>
+    <h1>{{ heading }}</h1>
+    {%- if lead %}<p class="lead">{{ lead | safe }}</p>{% endif %}
+    {%- if ctaLabel %}
+    <div class="btn-row"><a class="btn btn-primary" href="{{ ctaHref }}">{{ ctaLabel }} {{ icon("arrow") }}</a></div>
+    {%- endif %}
+  </div>
+  {%- if img %}{{ photo(img, "page-hero-media", "eager") }}{% endif %}
+  </div>
+</section>
+{%- endmacro -%}
+
+{%- macro ctaBand(heading, text, primaryLabel="Request a Compliance Review", primaryHref="/compliance-review/", secondaryLabel="Speak With a Compliance Specialist", secondaryHref="/compliance-review/?contact=specialist") -%}
+<section class="cta-band on-navy">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>{{ heading }}</h2>
+      {%- if text %}<p>{{ text }}</p>{% endif %}
+    </div>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="{{ primaryHref }}">{{ primaryLabel }}</a>
+      {%- if secondaryLabel %}<a class="btn btn-secondary" href="{{ secondaryHref }}">{{ secondaryLabel }}</a>{% endif %}
+    </div>
+  </div>
+</section>
+{%- endmacro -%}
+
+
+{#- Site photo. Images are listed in src/_data/images.json and can be replaced in the content editor. -#}
+{%- macro photo(img, cls="", loading="lazy") -%}
+<figure class="photo {{ cls }}"><img src="{{ img.src }}" alt="{{ img.alt }}" loading="{{ loading }}" decoding="async"></figure>
+{%- endmacro -%}

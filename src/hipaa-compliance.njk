@@ -1,0 +1,154 @@
+---
+layout: layouts/base.njk
+title: HIPAA Compliance Services
+permalink: /hipaa-compliance/
+description: "HIPAA compliance is an ongoing operational responsibility. Learn what administrative, physical, and technical safeguards involve, common compliance gaps, and how to keep your program demonstrable."
+---
+{%- from "partials/icons.njk" import icon -%}
+{%- from "partials/components.njk" import pageHero, ctaBand -%}
+
+{{ pageHero("HIPAA Compliance", "HIPAA Compliance Is an Ongoing Operational Responsibility",
+  "Privacy, security, workforce practices, vendor relationships, risk management, and documentation all work together. Annual training on its own is not a compliance program.",
+  "", "", [{label: "Services", href: "/services/"}, {label: "HIPAA Compliance"}], images.hipaa) }}
+
+<section class="section">
+  <div class="wrap">
+    <div class="margin-layout">
+      <div class="margin-label">
+        <span class="eyebrow">The framework</span>
+        <span class="cite">45 CFR Part 164, Subparts C &amp; E</span>
+      </div>
+      <div class="stack measure">
+        <p class="lede">The HIPAA Privacy Rule governs how protected health information may be used and disclosed. The Security Rule requires covered entities and business associates to protect electronic PHI through three categories of safeguards.</p>
+        <p class="muted">The Security Rule is flexible by design. It expects each organization to assess its own risks and choose reasonable and appropriate measures for its size and complexity. That flexibility is also why compliance cannot be bought as a template: the safeguards have to fit how your organization actually operates.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-mist rule-top">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Security Rule safeguards</span>
+      <h2>Three Categories of Safeguards</h2>
+    </div>
+    <div class="safeguards">
+      <div class="safeguard">
+        <span class="cite">§ 164.308</span>
+        <h3>Administrative Safeguards</h3>
+        <ul class="dash-list">
+          <li>Risk analysis and risk management</li>
+          <li>Assigned security responsibility</li>
+          <li>Workforce access management</li>
+          <li>Security awareness and training</li>
+          <li>Security incident procedures</li>
+          <li>Contingency planning</li>
+        </ul>
+      </div>
+      <div class="safeguard">
+        <span class="cite">§ 164.310</span>
+        <h3>Physical Safeguards</h3>
+        <ul class="dash-list">
+          <li>Facility access controls</li>
+          <li>Workstation use and security</li>
+          <li>Device and media handling</li>
+          <li>Physical access to records and equipment</li>
+          <li>Media disposal and reuse</li>
+        </ul>
+      </div>
+      <div class="safeguard">
+        <span class="cite">§ 164.312</span>
+        <h3>Technical Safeguards</h3>
+        <ul class="dash-list">
+          <li>Access controls and unique user IDs</li>
+          <li>Person or entity authentication</li>
+          <li>Audit controls</li>
+          <li>Integrity protections</li>
+          <li>Transmission security</li>
+          <li>Information system activity review</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="margin-layout">
+      <div class="margin-label">
+        <span class="eyebrow">Documentation</span>
+        <h2>Compliance Must Be Demonstrable</h2>
+        <span class="cite">§ 164.316: documentation retained six years</span>
+      </div>
+      <div class="stack">
+        <p class="lede">If a compliance activity is not documented, it is difficult to show that it happened. Organizations should be able to produce evidence that the program operates, not only that it exists on paper.</p>
+        <div class="table-wrap mt-m">
+          <table>
+            <thead><tr><th scope="col">Evidence</th><th scope="col">What it shows</th></tr></thead>
+            <tbody>
+              <tr><td>Risk assessments</td><td>Risks to ePHI were identified and evaluated</td></tr>
+              <tr><td>Risk management records</td><td>Identified risks were addressed or accepted with reason</td></tr>
+              <tr><td>Policy revisions</td><td>Policies are reviewed and updated as operations change</td></tr>
+              <tr><td>Training records</td><td>Each workforce member was trained, and when</td></tr>
+              <tr><td>Incident logs</td><td>Potential incidents were identified, assessed, and resolved</td></tr>
+              <tr><td>Access reviews</td><td>User access is checked and adjusted on a schedule</td></tr>
+              <tr><td>Vendor and BAA records</td><td>Business associates are identified and under agreement</td></tr>
+              <tr><td>Remediation documentation</td><td>Issues were tracked through to resolution</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="margin-layout">
+      <div class="margin-label">
+        <span class="eyebrow">What we find</span>
+        <h2>Common Compliance Gaps</h2>
+      </div>
+      <div class="grid grid-2">
+        <ul class="dash-list">
+          <li>Template policies that were never operationalized</li>
+          <li>Old or incomplete risk assessments</li>
+          <li>Missing or outdated Business Associate Agreements</li>
+          <li>Shared credentials or excessive user access</li>
+        </ul>
+        <ul class="dash-list">
+          <li>Former employees' accounts left active</li>
+          <li>Unapproved email, text, or cloud workflows</li>
+          <li>Incidents handled informally, with no record</li>
+          <li>No tracking of whether issues were fixed</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="margin-layout">
+      <div class="margin-label">
+        <span class="eyebrow">Change triggers</span>
+        <h2>When the Environment Changes</h2>
+      </div>
+      <div class="stack measure">
+        <p>A risk assessment describes your environment at a point in time. Compliance should be revisited whenever that environment changes, including:</p>
+        <ul class="check-list cols-2">
+          <li>New locations</li>
+          <li>New systems or EHR changes</li>
+          <li>New vendors</li>
+          <li>New workforce roles</li>
+          <li>New devices</li>
+          <li>Remote access methods</li>
+          <li>System integrations</li>
+          <li>Acquisitions or mergers</li>
+          <li>Major workflow changes</li>
+        </ul>
+        <p class="note mt-m">HHS has proposed significant updates to the HIPAA Security Rule. As of this writing they have not been finalized. We track regulatory developments and update client programs as requirements change.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight bg-mist rule-top">
+  <div class="wrap">
+    <p class="note">{{ site.notLegalAdvice }} For the regulation text, see <a href="https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164" rel="noopener" target="_blank">45 CFR Part 164</a> and the <a href="https://www.hhs.gov/hipaa/for-professionals/index.html" rel="noopener" target="_blank">HHS HIPAA guidance for professionals</a>.</p>
+  </div>
+</section>
+
+{{ ctaBand("Evaluate your HIPAA compliance program.", "We will review your current safeguards and documentation and show you where the gaps are.") }}

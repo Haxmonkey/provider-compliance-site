@@ -1,0 +1,49 @@
+---
+layout: layouts/base.njk
+title: HIPAA Readiness Checklist
+permalink: /resources/hipaa-readiness-checklist/
+description: "A free 30-point HIPAA readiness checklist for healthcare organizations. Check whether you could produce key compliance evidence today."
+---
+{%- from "partials/icons.njk" import icon -%}
+<section class="page-hero">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/resources/">Resources</a><span aria-hidden="true">/</span><span>HIPAA Readiness Checklist</span></nav>
+    <span class="eyebrow">Free checklist</span>
+    <h1>HIPAA Readiness Checklist</h1>
+    <p class="lead">Thirty questions across eight areas to check whether your organization could produce key HIPAA compliance evidence today.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap form-layout">
+    <form class="form" id="checklist-form" name="readiness-checklist" method="POST" action="/resources/hipaa-readiness-checklist/thank-you/" data-netlify="true" netlify-honeypot="company_website" novalidate>
+      <input type="hidden" name="form-name" value="readiness-checklist">
+      <p class="hp"><label>Leave this field empty <input name="company_website" tabindex="-1" autocomplete="off"></label></p>
+      <div class="form-error-summary" role="alert" hidden></div>
+      <fieldset>
+        <legend>Where should we send it?</legend>
+        <div class="field-row">
+          <div class="field"><label for="cl_name">Name<span class="req">*</span></label><input type="text" id="cl_name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="cl_title">Job title<span class="req">*</span></label><input type="text" id="cl_title" name="job_title" autocomplete="organization-title" required></div>
+        </div>
+        <div class="field"><label for="cl_org">Organization<span class="req">*</span></label><input type="text" id="cl_org" name="organization" autocomplete="organization" required></div>
+        <div class="field-row">
+          <div class="field"><label for="cl_email">Work email<span class="req">*</span></label><input type="email" id="cl_email" name="email" autocomplete="email" required></div>
+          <div class="field"><label for="cl_phone">Phone <span class="opt">(optional)</span></label><input type="tel" id="cl_phone" name="phone" autocomplete="tel"></div>
+        </div>
+        <div class="form-actions">
+          <span class="fine">We use your details to provide the checklist and may follow up once. See our <a href="/privacy-policy/">Privacy Policy</a>.</span>
+          <button class="btn btn-primary" type="submit">Get the Checklist</button>
+        </div>
+      </fieldset>
+    </form>
+    <aside class="form-aside">
+      <div class="panel panel-light">
+        <span class="eyebrow">What it covers</span>
+        <ul class="check-list">
+          {%- for g in checklist %}<li>{{ g.area }}</li>{% endfor %}
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>

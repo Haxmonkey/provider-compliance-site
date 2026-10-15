@@ -1,0 +1,50 @@
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand brand-invert" href="/">
+        <img src="/assets/img/mark.svg" alt="" width="34" height="34">
+        <span class="brand-text">
+          <span class="brand-name">Provider Compliance Bureau</span>
+          <span class="brand-sub">{{ site.tagline }}</span>
+        </span>
+      </a>
+      <p class="footer-identity">{{ site.identityShort }}</p>
+    </div>
+    <nav class="footer-col" aria-label="Services">
+      <h2>Services</h2>
+      <ul>
+        <li><a href="/services/">All Services</a></li>
+        <li><a href="/hipaa-compliance/">HIPAA Compliance</a></li>
+        <li><a href="/security-phi-protection/">Security &amp; PHI Protection</a></li>
+        <li><a href="/audit-readiness/">Audit Readiness</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-col" aria-label="Organization">
+      <h2>Organization</h2>
+      <ul>
+        <li><a href="/who-we-serve/">Who We Serve</a></li>
+        <li><a href="/how-it-works/">How It Works</a></li>
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/resources/">Resources</a></li>
+      </ul>
+    </nav>
+    <div class="footer-col">
+      <h2>Contact</h2>
+      <ul>
+        <li><a href="/compliance-review/">Request a Compliance Review</a></li>
+        <li><a href="/compliance-review/?contact=specialist">Speak With a Compliance Specialist</a></li>
+        {%- if contact.email %}<li><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></li>{% endif %}
+        {%- if contact.phone %}<li><a href="tel:{{ contact.phone | replace(' ', '') }}">{{ contact.phone }}</a></li>{% endif %}
+        {%- if contact.hours %}<li class="muted">{{ contact.hours }}</li>{% endif %}
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <p>{{ site.outcomeStatement }}</p>
+    <p>{{ site.notLegalAdvice }} Please do not send patient information or other protected health information through this website.</p>
+    <div class="footer-bottom">
+      <span>&copy; {{ build.year }} Provider Compliance Bureau</span>
+      <span class="footer-links"><a href="/privacy-policy/">Privacy Policy</a><a href="/terms-of-use/">Terms of Use</a></span>
+    </div>
+  </div>
+</footer>

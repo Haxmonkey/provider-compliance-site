@@ -1,0 +1,150 @@
+---
+layout: layouts/base.njk
+title: Request a Compliance Review
+permalink: /compliance-review/
+bodyClass: compliance-page
+description: "Request a healthcare compliance review. Tell us about your organization and current compliance environment, and our team will contact you to discuss next steps."
+---
+{%- from "partials/icons.njk" import icon -%}
+{%- set concerns = [
+  ["hipaa", "HIPAA compliance"],
+  ["cyber-phi", "Cybersecurity / PHI protection"],
+  ["risk-assessment", "Risk assessment"],
+  ["audit-readiness", "Audit readiness"],
+  ["training", "Employee training"],
+  ["vendor-baa", "Vendor / BAA compliance"],
+  ["policies", "Policies and procedures"],
+  ["incident-response", "Incident response"]
+] -%}
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Compliance Review</span>
+    <h1 id="form-heading">Request a Healthcare Compliance Review</h1>
+    <p class="lead">Tell us a little about your organization and current compliance environment. Our team will review the information and contact you to discuss potential areas of concern and appropriate next steps.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap form-layout">
+    <form class="form" id="review-form" name="compliance-review" method="POST" action="/compliance-review/received/" data-netlify="true" netlify-honeypot="company_website" novalidate aria-labelledby="form-heading">
+      <input type="hidden" name="form-name" value="compliance-review">
+      <input type="hidden" name="inquiry_type" id="inquiry_type" value="Compliance review">
+      <input type="hidden" name="primary_concerns" id="primary_concerns" value="">
+      <p class="hp"><label>Leave this field empty <input name="company_website" tabindex="-1" autocomplete="off"></label></p>
+
+      <div class="form-progress" aria-hidden="true">
+        <span class="is-active" data-progress="1"><b>1</b> Your organization</span>
+        <span class="sep"></span>
+        <span data-progress="2"><b>2</b> Compliance environment</span>
+      </div>
+      <div class="form-error-summary" id="error-summary" role="alert" hidden></div>
+
+      <fieldset data-step="1">
+        <legend>About you and your organization</legend>
+        <div class="field-row">
+          <div class="field"><label for="full_name">Full name<span class="req">*</span></label><input type="text" id="full_name" name="full_name" autocomplete="name" required></div>
+          <div class="field"><label for="job_title">Job title<span class="req">*</span></label><input type="text" id="job_title" name="job_title" autocomplete="organization-title" required></div>
+        </div>
+        <div class="field"><label for="organization">Organization name<span class="req">*</span></label><input type="text" id="organization" name="organization" autocomplete="organization" required></div>
+        <div class="field-row">
+          <div class="field"><label for="email">Work email<span class="req">*</span></label><input type="email" id="email" name="email" autocomplete="email" required></div>
+          <div class="field"><label for="phone">Phone<span class="req">*</span></label><input type="tel" id="phone" name="phone" autocomplete="tel" required></div>
+        </div>
+        <div class="field">
+          <span class="label" id="contact-label">Preferred contact method<span class="req">*</span></span>
+          <div class="inline-choices" role="radiogroup" aria-labelledby="contact-label">
+            <label class="choice"><input type="radio" name="contact_method" value="Email" required> Email</label>
+            <label class="choice"><input type="radio" name="contact_method" value="Phone"> Phone</label>
+            <label class="choice"><input type="radio" name="contact_method" value="Either"> Either</label>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="org_type">Type of organization<span class="req">*</span></label>
+            <select id="org_type" name="org_type" required>
+              <option value="">Select one</option>
+              {%- for seg in segments %}<option value="{{ seg.orgType }}" data-slug="{{ seg.slug }}">{{ seg.orgType }}</option>{% endfor %}
+              <option value="Other">Other HIPAA-covered organization</option>
+            </select>
+          </div>
+          <div class="field"><label for="locations">Number of locations<span class="req">*</span></label>
+            <select id="locations" name="locations" required>
+              <option value="">Select one</option><option>1</option><option>2 to 5</option><option>6 to 10</option><option>11 to 25</option><option>More than 25</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="workforce">Approximate number of employees<span class="req">*</span></label>
+            <select id="workforce" name="workforce" required>
+              <option value="">Select one</option><option>1 to 10</option><option>11 to 50</option><option>51 to 200</option><option>201 to 500</option><option>More than 500</option>
+            </select>
+          </div>
+          <div class="field"><label for="providers">Approximate number of providers <span class="opt">(optional)</span></label>
+            <select id="providers" name="providers">
+              <option value="">Select one</option><option>1 to 5</option><option>6 to 20</option><option>21 to 50</option><option>More than 50</option><option>Not applicable</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="states">State(s) of operation <span class="opt">(optional)</span></label><input type="text" id="states" name="states" placeholder="For example: Texas, Oklahoma"></div>
+        <div class="form-actions">
+          <span class="fine">Step 1 of 2</span>
+          <button class="btn btn-primary" type="button" data-next>Continue {{ icon("arrow") }}</button>
+        </div>
+      </fieldset>
+
+      <fieldset data-step="2" class="step-hidden">
+        <legend>Your current compliance environment</legend>
+        <div class="field">
+          <span class="label" id="concern-label">Primary concerns<span class="req">*</span> <span class="opt">Select all that apply</span></span>
+          <div class="choice-grid" role="group" aria-labelledby="concern-label" id="concerns">
+            {%- for c in concerns %}<label class="choice"><input type="checkbox" name="concerns" value="{{ c[1] }}" data-key="{{ c[0] }}"> {{ c[1] }}</label>{% endfor %}
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="compliance_officer">Do you have a dedicated compliance officer?</label>
+            <select id="compliance_officer" name="compliance_officer"><option value="">Select one</option><option>Yes</option><option>No</option><option>Someone handles it part-time</option><option>Unsure</option></select>
+          </div>
+          <div class="field"><label for="outside_provider">Do you currently use an outside HIPAA compliance provider?</label>
+            <select id="outside_provider" name="outside_provider"><option value="">Select one</option><option>Yes</option><option>No</option><option>Unsure</option></select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="last_sra">Most recent Security Risk Analysis</label>
+            <select id="last_sra" name="last_sra"><option value="">Select one</option><option>Within the last 12 months</option><option>1 to 2 years ago</option><option>More than 2 years ago</option><option>Unsure</option><option>Never completed</option></select>
+          </div>
+          <div class="field"><label for="policies">Documented policies and procedures?</label>
+            <select id="policies" name="policies"><option value="">Select one</option><option>Yes, current</option><option>Yes, but outdated</option><option>Partially</option><option>No</option><option>Unsure</option></select>
+          </div>
+        </div>
+        <div class="field"><label for="training_current">Is workforce HIPAA training current?</label>
+          <select id="training_current" name="training_current"><option value="">Select one</option><option>Yes</option><option>Partially</option><option>No</option><option>Unsure</option></select>
+        </div>
+        <div class="field"><label for="details">Tell us about any specific compliance concerns or issues your organization is currently facing. <span class="opt">(optional)</span></label>
+          <textarea id="details" name="details" maxlength="3000"></textarea>
+        </div>
+        <div class="phi-warning">{{ icon("alert") }}<span><strong>Please do not include patient information.</strong> Do not submit patient names, records, or any other protected health information through this form. Describe concerns in general terms only.</span></div>
+        <div class="form-actions">
+          <button class="btn btn-secondary" type="button" data-back>Back</button>
+          <span class="fine">By submitting, you agree that we may contact you about your request, as described in our <a href="/privacy-policy/">Privacy Policy</a>.</span>
+          <button class="btn btn-primary" type="submit">Request My Compliance Review</button>
+        </div>
+      </fieldset>
+    </form>
+
+    <aside class="form-aside" aria-label="What happens next">
+      <div class="panel">
+        <span class="eyebrow">What happens next</span>
+        <ol class="steps steps-compact">
+          <li class="step"><h3>We review your information</h3><p>A compliance specialist reads your submission.</p></li>
+          <li class="step"><h3>We contact you</h3><p>By your preferred method, to discuss your environment and concerns.</p></li>
+          <li class="step"><h3>We recommend next steps</h3><p>Scope is based on your organization, so pricing is discussed only after we understand your needs.</p></li>
+        </ol>
+      </div>
+      <div class="panel panel-light">
+        <h3 class="h-sm">{{ icon("lock") }} Your information</h3>
+        <p>We use the details you provide only to respond to your request. We do not sell your information.</p>
+      </div>
+      <p class="cite">{{ site.identityShort }}</p>
+    </aside>
+  </div>
+</section>

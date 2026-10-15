@@ -1,0 +1,16 @@
+{
+  "homeHero": { "src": "/assets/img/placeholders/home-hero.svg", "alt": "Practice administrator reviewing documents in a medical office", "brief": "Healthcare leader or administrator at work in a clinical office", "size": "1200 x 1500 (portrait)" },
+  "services": { "src": "/assets/img/placeholders/services.svg", "alt": "Compliance specialist meeting with a practice manager", "brief": "Compliance specialist meeting with practice staff", "size": "1600 x 1000" },
+  "hipaa": { "src": "/assets/img/placeholders/hipaa.svg", "alt": "Staff member at a clinic front desk", "brief": "Clinic front desk or records area", "size": "1600 x 1000" },
+  "security": { "src": "/assets/img/placeholders/security.svg", "alt": "Clinician using a workstation in an exam room", "brief": "Clinician or staff member at a workstation (no hacker imagery)", "size": "1600 x 1000" },
+  "audit": { "src": "/assets/img/placeholders/audit.svg", "alt": "Leadership team reviewing compliance records", "brief": "Leadership reviewing documents or binders", "size": "1600 x 1000" },
+  "about": { "src": "/assets/img/placeholders/about.svg", "alt": "The Provider Compliance Bureau team", "brief": "Provider Compliance Bureau team or leadership (real people only)", "size": "1600 x 1000" },
+  "segments": {
+    "physician-practices": { "src": "/assets/img/placeholders/segment-physician-practices.svg", "alt": "Physician and practice administrator in a private practice office", "brief": "Private physician practice: office or front desk", "size": "1600 x 1000" },
+    "surgical-practices": { "src": "/assets/img/placeholders/segment-surgical-practices.svg", "alt": "Surgical team reviewing a patient schedule", "brief": "Surgical practice: team, consult room, or scheduling", "size": "1600 x 1000" },
+    "specialty-clinics": { "src": "/assets/img/placeholders/segment-specialty-clinics.svg", "alt": "Specialist consulting with a patient in a clinic", "brief": "Specialty clinic: exam or consult room", "size": "1600 x 1000" },
+    "multi-location-groups": { "src": "/assets/img/placeholders/segment-multi-location-groups.svg", "alt": "Medical group leaders meeting in a conference room", "brief": "Medical group leadership or operations meeting", "size": "1600 x 1000" },
+    "hospitals": { "src": "/assets/img/placeholders/segment-hospitals.svg", "alt": "Hospital corridor with staff", "brief": "Hospital interior or administrative team", "size": "1600 x 1000" },
+    "business-associates": { "src": "/assets/img/placeholders/segment-business-associates.svg", "alt": "Billing team working in an office", "brief": "Healthcare vendor office: billing, IT, or services team", "size": "1600 x 1000" }
+  }
+}

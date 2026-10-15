@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+title: Who We Serve
+permalink: /who-we-serve/
+description: "HIPAA compliance support for private physician practices, surgical practices, specialty clinics, multi-location medical groups, hospitals, and business associates."
+---
+{%- from "partials/icons.njk" import icon -%}
+{%- from "partials/components.njk" import pageHero, ctaBand, photo -%}
+
+{{ pageHero("Who We Serve", "Healthcare Compliance Support Built Around Your Organization",
+  "A three-physician practice and a regional health system face the same rules, but very different risks. We start from how your organization actually works.") }}
+
+<section class="section">
+  <div class="wrap">
+    {%- for seg in segments %}
+    <div class="margin-layout stack-tablet" id="{{ seg.slug }}">
+      <div class="margin-label">
+        <span class="icon-badge-plain">{{ icon(seg.icon) }}</span>
+        <h2>{{ seg.name }}</h2>
+        <a class="text-link" href="/who-we-serve/{{ seg.slug }}/">Read more {{ icon("arrow") }}</a>
+      </div>
+      <div class="grid grid-2 segment-body">
+        <div class="stack">
+          {{ photo(images.segments[seg.slug], "segment-photo") }}
+          <p class="lede">{{ seg.lead }}</p>
+        </div>
+        <div class="deliverables">
+          <h3>Common challenges</h3>
+          <ul class="dash-list">
+            {%- for c in seg.challenges %}<li>{{ c }}</li>{% endfor %}
+          </ul>
+          <a class="text-link" href="/compliance-review/?type={{ seg.slug }}">Discuss your compliance needs {{ icon("arrow") }}</a>
+        </div>
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+{{ ctaBand("Discuss your organization's compliance needs.", "Tell us about your organization and we will explain what a review would cover.", "Discuss Your Compliance Environment", "/compliance-review/") }}
